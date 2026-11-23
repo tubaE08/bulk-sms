@@ -9,102 +9,212 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{
  font-family:Inter,sans-serif;
- min-height:100vh;display:flex;align-items:center;
- justify-content:center;background:#070711;
- color:white;padding:20px;overflow:hidden;
+ min-height:100vh;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ background:#070711;
+ color:white;
+ padding:20px;
+ overflow:hidden;
 }
 body:before,body:after{
- content:"";position:fixed;border-radius:50%;
- filter:blur(140px);pointer-events:none;
+ content:"";
+ position:fixed;
+ border-radius:50%;
+ filter:blur(140px);
+ pointer-events:none;
+ z-index:0;
 }
-body:before{width:450px;height:450px;background:#713cff;opacity:.2;top:-180px;left:-130px}
-body:after{width:400px;height:400px;background:#00c6ff;opacity:.12;bottom:-150px;right:-100px}
+body:before{
+ width:450px;height:450px;
+ background:#713cff;
+ opacity:.2;
+ top:-180px;left:-130px;
+}
+body:after{
+ width:400px;height:400px;
+ background:#00c6ff;
+ opacity:.12;
+ bottom:-150px;right:-100px;
+}
 .card{
- position:relative;width:100%;max-width:510px;
- padding:45px 30px;text-align:center;
+ position:relative;
+ z-index:1;
+ width:100%;
+ max-width:510px;
+ padding:45px 30px;
+ text-align:center;
  background:rgba(255,255,255,.045);
  border:1px solid rgba(255,255,255,.12);
- border-radius:28px;backdrop-filter:blur(22px);
+ border-radius:28px;
+ backdrop-filter:blur(22px);
  box-shadow:0 25px 100px #0009;
 }
-.logo{font-size:13px;font-weight:900;letter-spacing:4px;color:#b49aff;margin-bottom:35px}
+.logo{
+ font-size:13px;
+ font-weight:900;
+ letter-spacing:4px;
+ color:#b49aff;
+ margin-bottom:35px;
+}
 .icon{
- width:100px;height:100px;margin:0 auto 25px;
- border-radius:28px;display:flex;align-items:center;
- justify-content:center;font-size:45px;
+ width:100px;height:100px;
+ margin:0 auto 25px;
+ border-radius:28px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font-size:45px;
  background:linear-gradient(135deg,#713cff,#a855f7);
  box-shadow:0 0 45px #713cff66;
  animation:float 3s ease-in-out infinite;
 }
-@keyframes float{50%{transform:translateY(-12px) rotate(5deg)}}
+@keyframes float{
+ 50%{transform:translateY(-12px) rotate(5deg)}
+}
 .badge{
- display:inline-block;padding:9px 16px;border-radius:30px;
- background:#f59e0b18;color:#fbbf24;
- font-size:10px;font-weight:800;letter-spacing:1.5px;
- border:1px solid #f59e0b44;margin-bottom:20px;
+ display:inline-block;
+ padding:9px 16px;
+ border-radius:30px;
+ background:#f59e0b18;
+ color:#fbbf24;
+ font-size:10px;
+ font-weight:800;
+ letter-spacing:1.5px;
+ border:1px solid #f59e0b44;
+ margin-bottom:20px;
 }
-.dot{display:inline-block;width:7px;height:7px;background:#fbbf24;border-radius:50%;margin-right:7px}
-h1{font-size:35px;font-weight:900;line-height:1.25;margin-bottom:17px}
-h1 span{background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;color:transparent}
-.desc{color:#a1a1b5;font-size:13px;line-height:1.9;max-width:370px;margin:0 auto 28px}
-.progress-label{display:flex;justify-content:space-between;font-size:11px;color:#aaa;margin-bottom:10px}
-.progress{height:7px;background:#ffffff12;border-radius:20px;overflow:hidden;margin-bottom:28px}
-.progress span{display:block;width:75%;height:100%;background:linear-gradient(90deg,#713cff,#38bdf8);border-radius:20px;animation:loading 3s ease-in-out infinite alternate}
-@keyframes loading{from{width:55%}to{width:85%}}
+.dot{
+ display:inline-block;
+ width:7px;height:7px;
+ background:#fbbf24;
+ border-radius:50%;
+ margin-right:7px;
+}
+h1{
+ font-size:35px;
+ font-weight:900;
+ line-height:1.25;
+ margin-bottom:17px;
+}
+h1 span{
+ background:linear-gradient(90deg,#a78bfa,#38bdf8);
+ -webkit-background-clip:text;
+ color:transparent;
+}
+.desc{
+ color:#a1a1b5;
+ font-size:13px;
+ line-height:1.9;
+ max-width:370px;
+ margin:0 auto 28px;
+}
+.progress-label{
+ display:flex;
+ justify-content:space-between;
+ font-size:11px;
+ color:#aaa;
+ margin-bottom:10px;
+}
+.progress{
+ height:7px;
+ background:#ffffff12;
+ border-radius:20px;
+ overflow:hidden;
+ margin-bottom:28px;
+}
+.progress span{
+ display:block;
+ width:75%;
+ height:100%;
+ background:linear-gradient(90deg,#713cff,#38bdf8);
+ border-radius:20px;
+ animation:loading 3s ease-in-out infinite alternate;
+}
+@keyframes loading{
+ from{width:55%}
+ to{width:85%}
+}
+/* FIXED VISIT BUTTON */
 .btn{
- display:block;text-decoration:none;padding:17px 15px;
- border-radius:15px;background:linear-gradient(100deg,#713cff,#a855f7);
- color:white;font-weight:900;font-size:13px;
- letter-spacing:.5px;transition:.3s;
+ display:block;
+ position:relative;
+ z-index:9999;
+ pointer-events:auto;
+ cursor:pointer;
+ text-decoration:none;
+ padding:18px 15px;
+ border-radius:15px;
+ background:linear-gradient(100deg,#713cff,#a855f7);
+ color:white;
+ font-weight:900;
+ font-size:13px;
+ letter-spacing:.5px;
+ transition:.3s;
  box-shadow:0 10px 30px #713cff44;
+ -webkit-tap-highlight-color:transparent;
 }
-.btn:hover{transform:translateY(-4px);box-shadow:0 15px 40px #713cff77}
-.btn:active{transform:scale(.97)}
-.footer{margin-top:30px;padding-top:22px;border-top:1px solid #ffffff12;color:#77778b;font-size:11px;line-height:2}
+.btn:hover{
+ transform:translateY(-4px);
+ box-shadow:0 15px 40px #713cff77;
+}
+.btn:active{
+ transform:scale(.97);
+}
+.footer{
+ margin-top:30px;
+ padding-top:22px;
+ border-top:1px solid #ffffff12;
+ color:#77778b;
+ font-size:11px;
+ line-height:2;
+}
 .footer strong{color:#a78bfa}
-@media(max-width:480px){.card{padding:38px 22px}h1{font-size:29px}}
+@media(max-width:480px){
+ .card{padding:38px 22px}
+ h1{font-size:29px}
+}
 </style>
 </head>
 <body>
 <div class="card">
-
  <div class="logo">✦ OUR NEW PLATFORM</div>
-
  <div class="icon">⚙️</div>
-
  <div class="badge">
-  <span class="dot"></span> UNDER MAINTENANCE
+  <span class="dot"></span>
+  UNDER MAINTENANCE
  </div>
-
- <h1>We're Making<br><span>Something Better.</span></h1>
-
+ <h1>
+  We're Making<br>
+  <span>Something Better.</span>
+ </h1>
  <p class="desc">
   We're currently upgrading our platform to bring you
   a faster, smoother and better experience.
   Our new website is ready for you!
  </p>
-
  <div class="progress-label">
   <span>System Upgrade</span>
   <span>In Progress</span>
  </div>
-
- <div class="progress"><span></span></div>
-
- <!-- NEW WEBSITE BUTTON -->
- <a class="btn"
- href="https://login-inky-phi.vercel.app/"
- target="_blank"
- rel="noopener noreferrer">
+ <div class="progress">
+  <span></span>
+ </div>
+ <!-- WORKING WEBSITE LINK -->
+ <a
+  href="https://login-inky-phi.vercel.app/"
+  class="btn"
+  target="_blank"
+  rel="noopener noreferrer"
+ >
   VISIT OUR NEW WEBSITE &nbsp; →
  </a>
-
  <div class="footer">
   Thank you for your patience and support.<br>
   Developed with ♥ by <strong>EFTY</strong><br>
   © 2026 All Rights Reserved.
  </div>
-
 </div>
 </body>
 </html>
